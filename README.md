@@ -29,42 +29,36 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+### 1. first page :
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Welcome page with url: "/welcome"
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+\*\*\* Click on login button to sign in
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### 2. second page:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Login page with url: "/login"
 
-## Learn More
+\*\*\* Fill input fields "email and password"
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+example:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+email: email@email.com
+password: password
 
-### Code Splitting
+\*\*\* click on login, we will be redirect to "/welcome" welcome page again
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+\*\*\* New tab will be displayed in top bar 'manage your to do list', click on it.
 
-### Analyzing the Bundle Size
+## 3. Third page:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To do page with url: "/todo"
 
-### Making a Progressive Web App
+Here we could add, update, delete task, and change the status to completed
+or not completed with click on check box.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Also, we could filter the list of tasks by status (completed or not)
 
-### Advanced Configuration
+### 4. Fourth page
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Click on Demo link, we will display a video for application functionality

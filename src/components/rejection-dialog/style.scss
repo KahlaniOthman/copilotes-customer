@@ -1,0 +1,81 @@
+.dialogReject {
+  .md-dialog {
+    width: 400px;
+    border-radius: 10px;
+  }
+
+  .md-title--dialog {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    border-bottom: 1px solid #eee;
+    font-size: 18px;
+  }
+
+  .md-dialog-footer--inline {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px;
+    border-top: 1px solid #eee;
+
+    .md-btn--dialog {
+      margin-left: 16px;
+    }
+
+    .md-text--theme-secondary {
+      border: 1px solid #096dd9;
+      color: #096dd9;
+    }
+
+    .md-btn--text {
+      font-size: 13px;
+    }
+  }
+
+  &_textField {
+    margin-top: 16px;
+    padding: 12px 13px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+
+    .md-text-field--floating-margin {
+      margin-top: 0;
+    }
+
+    .md-floating-label--floating {
+      z-index: 9;
+      padding: 0 5px;
+      transform: translate3d(-4px, -6px, 0);
+      background: #fff;
+      color: #000;
+    }
+
+    .md-floating-label--inactive {
+      transform: translate3d(0, 12px, 0);
+    }
+
+    .md-divider {
+      display: none;
+    }
+  }
+
+  .reject-btn {
+    width: 150px;
+    height: 40px;
+    margin: 0 8px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border-color: #ff5722 !important;
+    background-color: #ff5722 !important;
+    color: #fff !important;
+  }
+
+  .discard-btn {
+    width: 150px;
+    height: 40px;
+    margin: 0 8px;
+    padding: 8px 12px;
+    border-radius: 4px;
+  }
+}

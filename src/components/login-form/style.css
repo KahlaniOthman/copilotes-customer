@@ -1,0 +1,23 @@
+.connexion-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.connexion-form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 18px;
+  text-align: center;
+}
+
+.info {
+  margin: 10px 8px;
+  padding: 8px;
+  text-align: center;
+  border: 1px Solid red;
+}

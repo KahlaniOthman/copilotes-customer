@@ -1,0 +1,32 @@
+.todo-page {
+  height: 100%;
+}
+
+.todo-page-filter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+}
+
+.box {
+  cursor: pointer;
+  margin: 8px;
+  padding: 8px;
+  border: 1px solid #eee;
+  width: 200px;
+  text-align: center;
+}
+
+.active {
+  border: 1px solid green;
+}
+
+.todo-list-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: wrap;
+  margin: 8px;
+  padding: 8px;
+}
