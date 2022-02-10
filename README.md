@@ -29,7 +29,14 @@ npm install
 # and 
 npm start
 ```
+and
 
+```
+npm install
+# and 
+npm run json:server
+
+```
 To launch locally in `http://localhost:3001/`
 
 ## Resources
