@@ -25,9 +25,9 @@ Create a simple app
 ## Get started 
 
 ```
-pnpn install
+npm install
 # and 
-pnpm start
+npm start
 ```
 
 To launch locally in `http://localhost:3001/`
