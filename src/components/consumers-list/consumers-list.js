@@ -2,6 +2,7 @@ import { useQuery, useMutation } from "react-query";
 import { useMemo, useState } from "react";
 import moment from "moment";
 import TextField from "@mui/material/TextField";
+import CircularProgress from '@mui/material/CircularProgress';
 
 import DataTable from "components/data-table";
 import Header from "components/header";
@@ -160,7 +161,9 @@ const CustomersList = () => {
           handleViewDetail={setShowInfo}
         />
       ) : (
-        "Loading..."
+        <div className="loading">
+          <CircularProgress  />
+        </div>
       )}
       <AddCustomerDialog
         open={openAddCustomerDialog}
