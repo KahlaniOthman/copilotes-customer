@@ -2,7 +2,6 @@ import { useQuery, useMutation } from "react-query";
 import { useMemo, useState } from "react";
 import moment from "moment";
 import TextField from "@mui/material/TextField";
-import { debounce } from "lodash-es";
 
 import DataTable from "components/data-table";
 import Header from "components/header";
@@ -138,7 +137,7 @@ const CustomersList = () => {
           id="filled-search"
           label="Search Customer"
           value={searchCustomer}
-          onChange={(e) => debounce(setSearchCustomer(e.target.value), 800)}
+          onChange={(e) => setSearchCustomer(e.target.value)}
           placeholder="First Name, Last Name"
           size="small"
           variant="standard"
