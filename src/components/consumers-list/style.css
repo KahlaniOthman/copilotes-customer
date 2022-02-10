@@ -1,0 +1,23 @@
+table,
+th,
+td {
+  height: 28px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+table {
+  width: 80%;
+  margin: auto;
+}
+
+.list-customers-wrapper {
+  width: 100%;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}

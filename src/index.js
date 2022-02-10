@@ -1,20 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Router } from "@reach/router";
-import { Provider } from "react-redux";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 import App from "components/app";
 import reportWebVitals from "./reportWebVitals";
-import store from "./store";
 
 import "./index.css";
 
+const queryClient = new QueryClient();
+
 ReactDOM.render(
-  <Provider store={store}>
-    <Router>
-      <App path="/*" />
-    </Router>
-  </Provider>,
+  <QueryClientProvider client={queryClient}>
+    <App path="/*" />
+  </QueryClientProvider>,
   document.getElementById("root")
 );
 
