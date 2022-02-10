@@ -8,6 +8,8 @@ import DataTable from "components/data-table";
 import Header from "components/header";
 import AddCustomerDialog from "components/add-customer-dialog";
 import ConfirmDialog from "components/confirm-dialog";
+import ModalContainer from "components/modal-container";
+import SimpleSnackbar from "components/toast";
 
 import {
   listOfCustomers,
@@ -19,12 +21,15 @@ import {
 import { tableConfigs } from "./helpers";
 
 import "./style.css";
+import InfoCard from "components/info-card/info-card";
 
 const CustomersList = () => {
   const [searchCustomer, setSearchCustomer] = useState("");
   const [customersSelected, setCustomersSelected] = useState([]);
   const [openAddCustomerDialog, setOpenAddCustomerDialog] = useState(false);
   const [openConfirmDialog, setOpenConfirmDialog] = useState(false);
+  const [showInfo, setShowInfo] = useState(false);
+  const [showToast, setShowToast] = useState(false);
 
   const {
     data: customers,
@@ -45,9 +50,11 @@ const CustomersList = () => {
           lastName: el.lastname,
           firstName: el.firstname,
           dateTimestamp: new Date(el?.details?.subscription?.date)?.getTime(),
-          subscription: el?.details?.subscription?.date
+          subscriptionDate: el?.details?.subscription?.date
             ? moment(el?.details?.subscription?.date).format("DD MMM, YYYY")
             : "",
+          cardType: el?.details?.subscription?.cardType,
+          country: el?.details?.country,
         }))
       : [];
     list = searchCustomer
@@ -70,6 +77,7 @@ const CustomersList = () => {
             refetch();
             setCustomersSelected([]);
             setOpenConfirmDialog(false);
+            setShowToast("Delete Customers is success");
           }
         },
       }
@@ -85,6 +93,7 @@ const CustomersList = () => {
             refetch();
             setCustomersSelected([]);
             setOpenConfirmDialog(false);
+            setShowToast("Delete Customers is success");
           }
         },
       }
@@ -110,6 +119,7 @@ const CustomersList = () => {
           if (!res.error) {
             refetch();
             setOpenAddCustomerDialog(false);
+            setShowToast("Add Customer is success");
           }
         },
       }
@@ -148,7 +158,7 @@ const CustomersList = () => {
           tableConfigs={tableConfigs}
           data={customersData}
           handleDeleteCustomer={(id) => setOpenConfirmDialog(id)}
-          handleViewDetail={() => null}
+          handleViewDetail={setShowInfo}
         />
       ) : (
         "Loading..."
@@ -167,6 +177,10 @@ const CustomersList = () => {
         }
         handleClose={() => setOpenConfirmDialog(false)}
       />
+      <ModalContainer open={showInfo} handleClose={() => setShowInfo(null)}>
+        <InfoCard {...showInfo} />
+      </ModalContainer>
+      <SimpleSnackbar open={showToast} message={showToast} handleClose={() => setShowToast(false)} />
     </div>
   );
 };

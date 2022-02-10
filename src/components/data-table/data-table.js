@@ -32,13 +32,13 @@ const DataTable = ({
           </td>
           <td>{el?.firstName}</td>
           <td>{el.lastName}</td>
-          <td>{el.subscription}</td>
+          <td>{el.subscriptionDate}</td>
           <td>
             <IconButton
               aria-label="eye"
               color="primary"
               size="small"
-              onClick={() => handleViewDetail(el.id)}
+              onClick={() => handleViewDetail(el)}
             >
               <RemoveRedEyeOutlinedIcon />
             </IconButton>
