@@ -9,51 +9,59 @@ const DataTable = ({
   handleDeleteCustomer,
   handleViewDetail,
   handleClickCustomer,
-  customersSelected = []
+  customersSelected = [],
 }) => {
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
 
   return (
-    <table>
-      <tr>
-        {tableConfigs.map(({ label, id }) => (
-          <th key={id}>{label}</th>
-        ))}
-      </tr>
-      {data.map((el) => (
-        <tr key={el.id}>
-          <td onClick={() => handleClickCustomer(el.id)}>
-            <Checkbox {...label}
-            checked={customersSelected?.includes(el.id)}
-            onChange={e => null }
-            inputProps={{ 'aria-label': 'controlled' }}
-             />
-            {el?.id}
-          </td>
-          <td>{el?.firstName}</td>
-          <td>{el.lastName}</td>
-          <td>{el.subscriptionDate}</td>
-          <td>
-            <IconButton
-              aria-label="eye"
-              color="primary"
-              size="small"
-              onClick={() => handleViewDetail(el)}
-            >
-              <RemoveRedEyeOutlinedIcon />
-            </IconButton>
-            <IconButton
-              aria-label="delete"
-              color="primary"
-              size="small"
-              onClick={() => handleDeleteCustomer(el.id)}
-            >
-              <DeleteIcon />
-            </IconButton>
-          </td>
+    <>
+      <table>
+        <tr>
+          {tableConfigs.map(({ label, id }) => (
+            <th key={id}>{label}</th>
+          ))}
         </tr>
-      ))}
-    </table>
+        {data?.length > 0
+          ? data.map((el) => (
+              <tr key={el.id}>
+                <td onClick={() => handleClickCustomer(el.id)}>
+                  <Checkbox
+                    {...label}
+                    checked={customersSelected?.includes(el.id)}
+                    onChange={(e) => null}
+                    inputProps={{ "aria-label": "controlled" }}
+                  />
+                  {el?.id}
+                </td>
+                <td>{el?.firstName}</td>
+                <td>{el.lastName}</td>
+                <td>{el.subscriptionDate}</td>
+                <td>
+                  <IconButton
+                    aria-label="eye"
+                    color="primary"
+                    size="small"
+                    onClick={() => handleViewDetail(el)}
+                  >
+                    <RemoveRedEyeOutlinedIcon />
+                  </IconButton>
+                  <IconButton
+                    aria-label="delete"
+                    color="primary"
+                    size="small"
+                    onClick={() => handleDeleteCustomer(el.id)}
+                  >
+                    <DeleteIcon />
+                  </IconButton>
+                </td>
+              </tr>
+            ))
+          : ""}
+      </table>
+      <h4 className="empty-content">
+        Click on add customer to create customer
+      </h4>
+    </>
   );
 };
 
